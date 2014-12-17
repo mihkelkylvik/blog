@@ -6,7 +6,7 @@
  * Time: 4:50 PM
  */
 
-class tags {
+class tags extends Controller{
     function index()
     {
         $this->tags = get_all("SELECT tag_name, COUNT(post_id) AS count
