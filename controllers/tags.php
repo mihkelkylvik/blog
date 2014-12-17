@@ -24,9 +24,10 @@ class tags extends Controller{
         var_dump($_POST);
     }
     function view(){
-        $post_id = $this->params[0];
-        $this->post = get_first("SELECT * FROM post
-                             NATURAL JOIN user
-                             WHERE post_id='$post_id");
+        $tag_name = $this->params[0];
+        $this->posts = get_all("SELECT * FROM post_tags
+                             NATURAL JOIN tag
+                             NATURAL JOIN post
+                             WHERE tag_name='$tag_name'");
     }
 } 
